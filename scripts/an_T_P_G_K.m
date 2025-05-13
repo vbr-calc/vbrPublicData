@@ -1,5 +1,6 @@
 % calculating average temperature, pressure derivatives 
 % using abers and hacker 2016 https://doi.org/10.1002/2015GC006171 
+% copy this script to the unzipped directory from the supplemental materials and run it
 
 
 % Load mineral database
