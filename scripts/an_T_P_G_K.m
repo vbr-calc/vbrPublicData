@@ -15,8 +15,8 @@ mins={'an',};
 modes=[100 ];       % These are volume fraction modes
 
 % temperature dependence
-tvals = linspace(0, 1200, 100);
-pp = 0.0;  % GPa
+tvals = linspace(0.01, 1200, 100);
+pp = 0.01;  % GPa
 gvals_t = zeros(size(tvals));
 kvals_t = zeros(size(tvals));
 for it = 1:numel(tvals)
@@ -31,6 +31,7 @@ end
 
 gfit = polyfit(tvals, gvals_t, 1);
 kfit = polyfit(tvals, kvals_t, 1);
+figure()
 plot(tvals, gvals_t,'k')
 hold on 
 plot(tvals, gfit(1) * tvals + gfit(2), '--k')
@@ -43,7 +44,7 @@ dKdT = kfit(1);
 
 % pressure dependence
 pvals = linspace(0, 4, 100);
-tt = 0;  
+tt = 0.01;  
 gvals_p = zeros(size(tvals));
 kvals_p = zeros(size(tvals));
 for ip = 1:numel(pvals)
